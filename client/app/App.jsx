@@ -2,7 +2,6 @@ import React from 'react';
 import {Nav} from './Nav.jsx';
 import ReactDOM from 'react-dom';
 import axios from 'axios';
-import {Nav} from './Nav.jsx';
 import {StudentList} from './StudentList.jsx';
 import {getStudentByName} from './helper/getStudents.js'
 
