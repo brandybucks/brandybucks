@@ -71,6 +71,7 @@ input.student-search {
 }
 .search-btn {
   background-color: rgba(134, 119, 156, 0.99) !important;
+<<<<<<< HEAD
   color: #fff !important;
 }
 body {
@@ -80,4 +81,10 @@ body {
 #wrapper {
     padding-left: 225px;
     color: #999 !important;
+=======
+}
+
+input, textarea{
+    color: rgba(134, 119, 156, 0.99);
+>>>>>>> changed search box text color, added StudentEntry compoenet, added StudentForm component, added helper function with Axios
 }
