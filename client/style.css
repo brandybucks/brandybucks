@@ -81,3 +81,7 @@ body {
     padding-left: 225px;
     color: #999 !important;
 }
+
+input, textarea{
+    color: rgba(134, 119, 156, 0.99);
+}

@@ -1,4 +1,5 @@
 import React from 'react';
+import {StudentEntry} from './StudentEntry.jsx'
 
 class StudentList extends React.Component {
   render () {
@@ -14,12 +15,19 @@ class StudentList extends React.Component {
             <div className="col-md-12">
               Text
             </div>
+            <div>
+              {props.students.map((student, index) => {
+                return (
+                  <StudentEntry eachStudent={student} key={index} />
+                )
+              })
+              }
+            </div>
           </div>
         </div>
       </div>
     );
   }
-
 }
 
 export {StudentList};
