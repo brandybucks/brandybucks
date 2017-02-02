@@ -13,6 +13,8 @@ router.get('/logout', controller.logout.get);
 
 router.post('/students/name', controller.query.post);
 
+router.get('/students/getAll', controller.studentInfo.get);
+// router.post('/students', controller.)
 
 router.get('/testGetTopSecretInfo', controller.testGetTopSecretInfo.get);
 

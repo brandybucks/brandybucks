@@ -28,6 +28,7 @@ var bookshelf = require('bookshelf')(knex);
 //user schemas:
 
 //checks for a table's existence by tableName, resolving with a boolean to signal if the table exists
+knex.schema.dropTableIfExists('students');
 bookshelf.knex.schema.hasTable('students').then(function(exists) {
   if (!exists) {
     return knex.schema.createTable('students', function(student) {
@@ -43,7 +44,7 @@ bookshelf.knex.schema.hasTable('students').then(function(exists) {
   }
 });
 
-
+knex.schema.dropTableIfExists('users');
 bookshelf.knex.schema.hasTable('users').then(function(exists) {
   if (!exists) {
     return knex.schema.createTable('users', function(user) {
@@ -53,6 +54,7 @@ bookshelf.knex.schema.hasTable('users').then(function(exists) {
       user.string('type', 100);
 
       // does password go here? and do we want a username field?
+      user.string('username', 100);
       user.string('password', 200);
       user.timestamps();
 
