@@ -1,6 +1,21 @@
 var User = require('../models/user');
+var knex = require('../config.js').knex;
 
 module.exports = {
+
+  testGetTopSecretInfo: {
+    get: function(req, res) {
+
+
+      if (req.session.level === 'priveledged') {
+        res.send('top Secret');
+      } else {
+        res.send('nice try');
+      }
+
+
+    }
+  },
 
   login: {
 
@@ -17,7 +32,14 @@ module.exports = {
 
             user.comparePassword(password, function(match) {
               if (match) {
-                res.send('its a re-hashed match!!')
+
+                // set the permissions level
+                req.session.level = 'priveledged'
+
+                // res.send('its a re-hashed match!!')
+                res.redirect('/')
+
+                // change the session level
               } else {
                 res.send('not the same hash this hash from the past')
               }
@@ -53,6 +75,33 @@ module.exports = {
             // res.redirect('/signup');
           }
         });
+    }
+  },
+
+  logout: {
+    get: function(req, res) {
+
+      console.log('from LOGOUT ==> ', req.session)
+      req.session.destroy(function(err) {
+        // cannot access session here
+        console.log('session destroyed')
+      })
+
+      res.send('digging');
+
+    }
+  },
+
+  query: {
+
+    post: function(req, res) {
+      var queryString = req.body.name;
+      knex('students').where({
+        first_name: queryString})
+        .select('*').then(function(data){
+          res.send(data);
+        })
+
     }
   }
 }

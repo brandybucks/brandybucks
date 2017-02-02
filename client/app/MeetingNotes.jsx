@@ -1,13 +1,13 @@
 import React from 'react';
 
-class StudentList extends React.Component {
+class MeetingNotes extends React.Component {
   render () {
     return (
       <div id="wrapper">
         <div className="container-fluid">
           <div className="row">
             <div className="col-md-12">
-                  <h1>View Student List</h1>
+                  <h1>Meeting Notes</h1>
             </div>
           </div>
           <div className="row">
@@ -19,7 +19,6 @@ class StudentList extends React.Component {
       </div>
     );
   }
-
 }
 
-export {StudentList};
+export {MeetingNotes};

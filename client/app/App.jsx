@@ -1,5 +1,6 @@
 import React from 'react';
-import {Nav} from './Nav.jsx';
+import {render} from 'react-dom';
+import Nav from './Nav.jsx';
 
 class App extends React.Component {
   constructor(props) {
@@ -35,7 +36,6 @@ class App extends React.Component {
       <div className="container">
         <Nav searchText={this.handleChangeSearch} searchClicked={this.searchClicked} />
         {this.props.children}
-      
       </div>
     );
   }
