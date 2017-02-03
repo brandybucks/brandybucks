@@ -16,9 +16,15 @@ class MeetingNotes extends React.Component {
   componentWillMount() {
     getAllLogs()
     .then((resp) => {
-      this.setState({
-        logs: resp.data.filter((log) => {return log.types === 2}),
-      });
+      if (this.props.student_id === '') {
+        this.setState({
+          logs: resp.data.filter((log) => {return log.types === 2}),
+        });
+      } else {
+        this.setState({
+          logs: resp.data.filter((log) => {return log.types === 2 && log.student_id === this.props.student_id}),
+        });
+      }
     })
     .catch((err) => {
       console.log(err);
@@ -36,9 +42,9 @@ class MeetingNotes extends React.Component {
                   <table className="table table-hover" >
                     <thead>
                       <tr>
-                        <th className="col-md-4">Student</th>
-                        <th className="col-md-4">Notes</th>
-                        <th className="col-md-4">Author</th>
+                        <th className="col-md-2">Student</th>
+                        <th className="col-md-2">Author</th>
+                        <th className="col-md-8">Notes</th>
                       </tr>
                     </thead>
                     <tbody>

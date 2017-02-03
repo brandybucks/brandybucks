@@ -16,9 +16,15 @@ class ViewLogs extends React.Component {
   componentWillMount() {
     getAllLogs()
     .then((resp) => {
-      this.setState({
-        logs: resp.data.filter((log) => {return log.types === 3}),
-      });
+      if (this.props.student_id === '') {
+        this.setState({
+          logs: resp.data.filter((log) => {return log.types === 3}),
+        });
+      } else {
+        this.setState({
+          logs: resp.data.filter((log) => {return log.types === 3 && log.student_id === this.props.student_id}),
+        });
+      }
     })
     .catch((err) => {
       console.log(err);
@@ -37,8 +43,8 @@ class ViewLogs extends React.Component {
                     <thead>
                       <tr>
                         <th className="col-md-4">Student</th>
-                        <th className="col-md-4">Log</th>
                         <th className="col-md-4">Author</th>
+                        <th className="col-md-4">Log</th>
                       </tr>
                     </thead>
                     <tbody>

@@ -8,9 +8,9 @@ class LogEntry extends React.Component {
   render() {
     return (
       <tr>
-        <td>{this.props.eachLog.student_id}</td>
-        <td>{this.props.eachLog.log}</td>
+        <td>{this.props.eachLog.first_name} {this.props.eachLog.last_name}</td>
         <td>{this.props.eachLog.user}</td>
+        <td>{this.props.eachLog.log}</td>
       </tr>
     )
   }

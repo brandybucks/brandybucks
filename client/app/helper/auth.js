@@ -31,3 +31,7 @@ exports.addLog = (log) => {
     data: log
   });
 };
+
+exports.logout = () => {
+  return axios.get('authApi/logout')
+};

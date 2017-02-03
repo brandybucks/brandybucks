@@ -1,13 +1,14 @@
 import React from 'react';
 import {Link} from 'react-router';
 import {getStudentByName} from './helper/auth.js';
+import {logout} from './helper/auth.js';
 
 class Nav extends React.Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      studentName: 'Student Name',
+      studentName: '',
       studentPic: '../llama.png',
       searchInput: ''
     };
@@ -15,6 +16,7 @@ class Nav extends React.Component {
     //binding all the method to this context before pass down to components.
     this.handleChangeSearch = this.handleChangeSearch.bind(this);
     this.searchClicked = this.searchClicked.bind(this);
+    this.logOut = this.logOut.bind(this);
   };
 
     //create handler method to extract search input box value
@@ -44,7 +46,8 @@ class Nav extends React.Component {
         context.setState({
           studentName: resp.data.first_name + ' ' + resp.data.last_name,
           studentPic: resp.data.pic,
-        })
+        });
+        this.props.handleSearchInputChange(resp.data.id);
       }
     })
     .catch((err) => {
@@ -52,9 +55,14 @@ class Nav extends React.Component {
     })
   };
 
-  logout(e) {
-    e.preventDefault();
-    this.props.logout();
+  logOut() {
+    logout()
+    .then((resp) => {
+      console.log('logged out');
+    })
+    .catch((err) => {
+      console.log(err);
+    });
   };
 
   render () {
@@ -72,7 +80,7 @@ class Nav extends React.Component {
                 <Link to="/createlog" className="nav-link">Create Log</Link>
               </li>
               <li className="nav-item">
-                <a href="#" onClick={this.logout.bind(this)} className="nav-link">Logout</a>
+                <a href="/login" onClick={this.logOut} className="nav-link">Logout</a>
               </li>
               <li className="nav-item">
                 <input className="student-search" type="text" placeholder="&nbsp;Search Student" onChange={this.handleChangeSearch} />&nbsp;
