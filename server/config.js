@@ -89,13 +89,13 @@ bookshelf.knex.schema.hasTable('logs').then(function(exists) {
   if (!exists) {
     return knex.schema.createTable('logs', function(table) {
       table.increments('id').primary();
-      table.integer('types');
       table.text('log');
       table.integer('user_id').unsigned();
       table.foreign('user_id').references('user_id');
       table.string('user',100);
       table.integer('student_id').unsigned();
       table.foreign('student_id').references('student_id');
+      table.integer('types');
       table.string('other', 200);
     }).then(function (table) {
     console.log('Created Table4', table);

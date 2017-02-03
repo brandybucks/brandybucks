@@ -66,16 +66,27 @@ module.exports = {
       var author = req.body.author
       var student_id = req.body.id
       var log = req.body.log
+      var types = req.body.types
+      var other = req.body.other
 
       var newLog = new Log({
         log: log,
         user: author,
-        student_id: student_id
+        student_id: student_id,
+        types: types,
+        other: other
+
       })
       newLog.save()
         .then(function() {
           res.send('log saved')
       });
+    },
+
+    get: function(req, res) {
+      knex('logs').select('*').then(function(data){
+        res.send(data);
+      })
     }
   }
 }

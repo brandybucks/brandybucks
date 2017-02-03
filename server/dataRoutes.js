@@ -11,6 +11,8 @@ router.post('/students', controller.studentInfo.post);
 
 router.post('/logs', controller.logs.post);
 
+router.get('/logs/getAll', controller.logs.get);
+
 
 module.exports = router;
 
