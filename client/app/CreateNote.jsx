@@ -10,7 +10,7 @@ module.exports = React.createClass({
       id: '',
       author: '',
       log: '',
-      types: 3
+      types: 2
     }  
   },
 
@@ -68,7 +68,7 @@ module.exports = React.createClass({
       <div className="row">
       <div className="col-md-12">
       <div className="formWidth">
-      <h1>Create Log</h1>
+      <h1>Add Meeting Notes</h1>
       <form onSubmit={this.submitClick}>
         <div className="form-group">
         <label>
@@ -92,12 +92,12 @@ module.exports = React.createClass({
         </div>
         <div className="form-group">
         <label>
-        Update / Log:
+        Meeting Notes:
         </label>
-        <input type="text" className="form-control" onChange={this.handleLog} required/>
+        <textarea type="text" className="form-control" onChange={this.handleLog} required/>
         </div>
         <div className="form-group">
-        <button className="btn search-btn">Add log</button>
+        <button className="btn search-btn">Add meeting notes</button>
         </div>
       </form>
       </div>

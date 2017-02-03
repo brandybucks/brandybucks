@@ -8,9 +8,9 @@ module.exports = React.createClass({
     return {
       students: [],
       id: '',
-      author: '',
+      other: 'Not Started',
       log: '',
-      types: 3
+      types: 1
     }  
   },
 
@@ -26,9 +26,9 @@ module.exports = React.createClass({
     })
   },
 
-  handleAuthor(e) {
+  handleOther(e) {
     this.setState({
-      author: e.target.value,
+      other: e.target.value,
     });
   },
 
@@ -48,7 +48,7 @@ module.exports = React.createClass({
     e.preventDefault();
     let log = {
       id: this.state.id,
-      author: this.state.author,
+      other: this.state.other,
       log: this.state.log,
       types: this.state.types
     }
@@ -68,14 +68,8 @@ module.exports = React.createClass({
       <div className="row">
       <div className="col-md-12">
       <div className="formWidth">
-      <h1>Create Log</h1>
+      <h1>Add Goal</h1>
       <form onSubmit={this.submitClick}>
-        <div className="form-group">
-        <label>
-        Author:
-        </label>
-        <input type="text" className="form-control" onChange={this.handleAuthor} required />
-        </div>
         <div className="form-group">
         <label>
         Student:
@@ -92,12 +86,22 @@ module.exports = React.createClass({
         </div>
         <div className="form-group">
         <label>
-        Update / Log:
+        Goal:
         </label>
         <input type="text" className="form-control" onChange={this.handleLog} required/>
         </div>
         <div className="form-group">
-        <button className="btn search-btn">Add log</button>
+        <label>
+        Current Status:
+        </label>
+        <select className="form-control custom-select" onChange={this.handleOther} required>
+          <option value="Not Started">Not Started</option>
+          <option value="In Progress">In Progress</option>
+          <option value="Complete">Complete</option>
+        </select>
+        </div>
+        <div className="form-group">
+        <button className="btn search-btn">Add goal</button>
         </div>
       </form>
       </div>

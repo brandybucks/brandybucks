@@ -29,7 +29,6 @@ class StudentForm extends React.Component{
   }
 
   handleFirstName(e) {
-    console.log(e.target.value)
     this.setState({
       first_name: e.target.value,
     });
@@ -42,21 +41,18 @@ class StudentForm extends React.Component{
   }
 
   handleGrade(e) {
-    console.log(e.target.value)
     this.setState({
       grade: e.target.value,
     });
   }
 
   handleIEP(e) {
-    console.log(e.target.value)
     this.setState({
       IEP: e.target.value,
     });
   }
 
   handlePic(e) {
-    console.log(e.target.value)
     this.setState({
       pic: e.target.value,
     });
@@ -80,7 +76,7 @@ class StudentForm extends React.Component{
       })
       .catch(function(err) {
         context.setState({
-          message: 'Sorry! error occure can not add student!'
+          message: 'Sorry! error occured can not add student!'
         })
         console.log('could not add student', err);
       })
@@ -89,6 +85,7 @@ class StudentForm extends React.Component{
   render() {
     return(
       <div className="formWidth">
+      <h1>Add New Student</h1>
       <form onSubmit={this.submitClick}>
         <div className="form-group">
         <label>

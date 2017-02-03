@@ -20,6 +20,10 @@ exports.addStudent = (student) => {
   });
 };
 
+exports.getAllLogs = () => {
+  return axios.get('api/logs/getAll')
+};
+
 exports.addLog = (log) => {
   return axios({
     method: 'POST',

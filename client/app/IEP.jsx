@@ -7,7 +7,7 @@ class IEP extends React.Component {
         <div className="container-fluid">
           <div className="row">
             <div className="col-md-12">
-                  <h1>[Student's Name] IEP</h1>
+                  <h1>View IEP</h1>
             </div>
           </div>
           <div className="row">

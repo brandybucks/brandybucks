@@ -29,3 +29,5 @@ node_modules/
 bower_components/
 
 .DS_Store
+client/public/bundle.js
+client/public/bundle.js.map
