@@ -23,6 +23,7 @@ class MeetingNotes extends React.Component {
       } else {
         this.setState({
           logs: resp.data.filter((log) => {return log.types === 2 && log.student_id === this.props.student_id}),
+          studentName: resp.data[0].first_name + ' ' + resp.data[0].last_name
         });
       }
     })
@@ -37,7 +38,7 @@ class MeetingNotes extends React.Component {
         <div className="container-fluid">
           <div className="row">
             <div className="col-md-12">
-                <h1 className="alignleft">View Meeting Notes</h1>
+                <h1 className="alignleft">{this.state.studentName} Meeting Notes</h1>
                 <h3 className="alignright"><Link to="/createnote"><img src="add.png" height="25px" />Meeting Notes</Link></h3>
                   <table className="table table-hover" >
                     <thead>

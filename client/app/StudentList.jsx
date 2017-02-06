@@ -18,10 +18,17 @@ class StudentList extends React.Component {
 
   //method to retrieve student from database once page load.
   componentWillMount() {
+  function compareLastName(a,b) {
+    if (a.last_name < b.last_name)
+      return -1;
+    if (a.last_name > b.last_name)
+      return 1;
+    return 0;
+  }
     getAllStudents()
     .then((resp) => {
       this.setState({
-        students: resp.data,
+        students: resp.data.sort(compareLastName),
       });
     })
     .catch((err) => {
@@ -51,14 +58,14 @@ class StudentList extends React.Component {
         <div className="container-fluid">
           <div className="row">
             <div className="col-md-12">
-                <h1 className="alignleft">View Students</h1>
+                <h1 className="alignleft">View All Students</h1>
                 <h3 className="alignright"><Link to="/addstudent"><img src="add.png" height="25px" />Student</Link></h3>
                   <table className="table table-hover table-striped" >
                     <thead>
                       <tr>
                         <th className="col-md-4">Photo</th>
-                        <th className="col-md-2">First Name</th>
                         <th className="col-md-2">Last Name</th>
+                        <th className="col-md-2">First Name</th>
                         <th className="col-md-2">Grade</th>
                         <th className="col-md-2"># Logs</th>
                       </tr>

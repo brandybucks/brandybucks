@@ -23,6 +23,7 @@ class ViewLogs extends React.Component {
       } else {
         this.setState({
           logs: resp.data.filter((log) => {return log.types === 3 && log.student_id === this.props.student_id}),
+          studentName: resp.data[0].first_name + ' ' + resp.data[0].last_name
         });
       }
     })
@@ -37,7 +38,7 @@ class ViewLogs extends React.Component {
         <div className="container-fluid">
           <div className="row">
             <div className="col-md-12">
-                <h1 className="alignleft">View Updates / Logs</h1>
+                <h1 className="alignleft">{this.state.studentName} Logs</h1>
                 <h3 className="alignright"><Link to="/createlog"><img src="add.png" height="25px" />Log</Link></h3>
                   <table className="table table-hover" >
                     <thead>

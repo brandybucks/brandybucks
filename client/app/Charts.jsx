@@ -1,7 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 import {getAllLogs} from './helper/auth.js'
-import {VictoryBar, VictoryChart, VictoryTheme} from 'victory';
+import {VictoryBar, VictoryPie, VictoryChart, VictoryTheme} from 'victory';
 
 module.exports = React.createClass({
   getInitialState: function() {
@@ -55,6 +55,20 @@ module.exports = React.createClass({
               id: 2,
               x: "Goals",
               contributions: resp.data.filter((log) => {return log.types === 1}).length
+          }],
+          studentName: '',
+          data2: [{
+              id: 0,
+              x: "Not Started",
+              contributions: resp.data.filter((log) => {return log.other === "Not Started" && log.types === 1}).length
+          }, {
+              id: 1,
+              x: "In Progress",
+              contributions: resp.data.filter((log) => {return log.other === "In Progress" && log.types === 1}).length
+          }, {
+              id: 2,
+              x: "Complete",
+              contributions: resp.data.filter((log) => {return log.other === "Complete" && log.types === 1}).length
           }]
         }); 
       } else {
@@ -102,7 +116,7 @@ module.exports = React.createClass({
       <div className="container-fluid">
       <div className="row">
       <div className="col-md-8">
-      <h1>Statistics</h1>
+      <h1>{this.state.studentName} Statistics</h1>
       <h3 className="goalTitle2">Total Entries</h3>
       <div className="pullup">
       <VictoryChart domainPadding={20} animate={{ duration: 2000, easing: "bounce" }}>
@@ -114,6 +128,18 @@ module.exports = React.createClass({
             y={(datum) => datum.contributions} 
           />
       </VictoryChart>
+      <h3 className="goalTitle">{this.state.studentName} &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp; Goals</h3>
+      <div className="pullup">
+          <VictoryPie
+            name="area-1"
+            colorScale={"qualitative"}
+            width={450} 
+            height={300}
+            data={this.state.data2}
+            x="x"
+            y={(datum) => datum.contributions} 
+          />
+      </div>
       </div>
       </div>
       <div className="col-md-4"></div>
@@ -139,15 +165,15 @@ module.exports = React.createClass({
       </VictoryChart>
       <h3 className="goalTitle">{this.state.studentName} Goals</h3>
       <div className="pullup">
-      <VictoryChart domainPadding={20}  animate={{ duration: 2000, easing: "bounce" }}>
-          <VictoryBar
+          <VictoryPie
             name="area-1"
             colorScale={"qualitative"}
+            width={450} 
+            height={300}
             data={this.state.data2}
             x="x"
             y={(datum) => datum.contributions} 
           />
-      </VictoryChart>
       </div>
       </div>
       </div>
