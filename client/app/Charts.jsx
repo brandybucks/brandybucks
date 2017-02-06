@@ -117,7 +117,7 @@ module.exports = React.createClass({
       <div className="row">
       <div className="col-md-8">
       <h1>{this.state.studentName} Statistics</h1>
-      <h3 className="goalTitle2">{this.state.studentName} Entries</h3>
+      <h3 className="goalTitle2">Total Entries</h3>
       <div className="pullup">
       <VictoryChart domainPadding={20} animate={{ duration: 2000, easing: "bounce" }}>
           <VictoryBar
@@ -152,7 +152,6 @@ module.exports = React.createClass({
       <div className="row">
       <div className="col-md-8">
       <h1>{this.state.studentName} Statistics</h1>
-      <h3 className="goalTitle2">{this.state.studentName} Entries</h3>
       <div className="pullup">
       <VictoryChart domainPadding={20} animate={{ duration: 2000, easing: "bounce" }}>
           <VictoryBar
