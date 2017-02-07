@@ -17,13 +17,13 @@ Once the project moves into development, the press release can be used as a touc
  -->
  
 ## Heading ##
-LLama
+llama
 
 ## Sub-Heading ##
 Supporting students with disabilities & empowering educators
 
 ## Summary ##
-LLama is a tool that helps educators and parents better support students with disabilities by tracking student goals and streamlining the IEP reporting process. Teachers can easily submit updates with images of student while parents can easily view their child's progress and identify areas that need additional support. 
+llama is a tool that helps educators and parents better support students with disabilities by tracking student goals and streamlining the IEP reporting process. Teachers can easily submit updates with images of student while parents can easily view their child's progress and identify areas that need additional support. 
 
 ## Problem ##
 This app was inspired by the desire to advocate for and empower students in Individualized Educational Programs (IEP). IEPs exist to support students with learning deficiencies, and include specific educational goals formed around the unique profile of each student. IEPs allow teachers to provide appropriate modifications and accommodations to help students make academic and social progress, ultimately putting them on a path to achieving their individual goals. Unfortunately, IEP related feedback isn’t consistent across-the-board and important information often gets lost in the paper trail.
