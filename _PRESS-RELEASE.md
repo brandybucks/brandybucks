@@ -18,13 +18,13 @@ Once the project moves into development, the press release can be used as a touc
  
 ## Heading ##
   > Name the product in a way the reader (i.e. your target customers) will understand.
- TBD: <produce name>
+LLama
 
 ## Sub-Heading ##
 Supporting students with disabilities & empowering educators
 
 ## Summary ##
-<product name> is a tool that helps educators and parents better support students with disabilities by tracking student goals and streamlining the IEP reporting process. Teachers can easily submit updates with images of student while parents can easily view their child's progress and identify areas that need additional support. 
+LLama is a tool that helps educators and parents better support students with disabilities by tracking student goals and streamlining the IEP reporting process. Teachers can easily submit updates with images of student while parents can easily view their child's progress and identify areas that need additional support. 
 
 ## Problem ##
 This app was inspired by the desire to advocate for and empower students in Individualized Educational Programs (IEP). IEPs exist to support students with learning deficiencies, and include specific educational goals formed around the unique profile of each student. IEPs allow teachers to provide appropriate modifications and accommodations to help students make academic and social progress, ultimately putting them on a path to achieving their individual goals. Unfortunately, IEP related feedback isn’t consistent across-the-board and important information often gets lost in the paper trail.
@@ -33,7 +33,7 @@ This app was inspired by the desire to advocate for and empower students in Indi
 We have come up with an app that tracks the progress of student goals and allows teachers to easily submit feedback with student sample work. This will streamline the IEP reporting process while providing more accurate information based on student data, which allows stakeholders of students to gain a more holistic understanding of students needs and corresponding academic objectives.
 
 ## Quote from You ##
-"We kept the needs of students and educators in mind through every step of <product name's> creation. We hope this tool makes it easier for everyone to achieve their goals!" - The <product name's> Team
+"We kept the needs of students and educators in mind through every step of Llama's creation. We hope this tool makes it easier for everyone to achieve their goals!" - The Llama Team
 
 ## How to Get Started ##
 Once an IEP team member logs into the app, they can earily search through and view their student(s) relevant information. Updating and adding new data is as easy as clicking a few buttons!
