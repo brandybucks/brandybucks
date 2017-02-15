@@ -2,9 +2,9 @@ var db = require('../config');
 var bcrypt = require('bcrypt-nodejs');
 var Promise = require('bluebird');
 
-var User = db.Model.extend({
+var Teacher = db.Model.extend({
 
-  tableName: 'users',
+  tableName: 'teachers',
   hasTimestamps: true,
 
   initialize: function() {
@@ -12,7 +12,7 @@ var User = db.Model.extend({
   },
   comparePassword: function(attemptedPassword, callback) {
     bcrypt.compare(attemptedPassword, this.get('password'), function(err, isMatch) {
-      callback(isMatch);
+        callback(isMatch);
     });
   },
   hashPassword: function() {
@@ -24,4 +24,4 @@ var User = db.Model.extend({
   }
 });
 
-module.exports = User;
+module.exports = Teacher;

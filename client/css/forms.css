@@ -1,0 +1,42 @@
+.container {
+  width: 100%;
+}
+
+h1 {
+  margin: auto;
+  width: 50%;
+}
+
+.date {
+  float: right;
+  display: block;
+  margin-bottom:100px;
+}
+
+.date input {
+  margin-left: 10px;
+}
+
+.radio-group {
+  margin: 50px;
+}
+
+.radio {
+  display: inline-block;
+  margin-right: 3%;
+  /*border: 1px solid black;*/
+  /*font-size: 50px;*/
+}
+
+.radio input {
+  /*visibility: collapse;*/
+}
+
+.radio input:checked {
+  background-color: gray;
+}
+
+.btn {
+  float: right;
+  display: block;
+}
